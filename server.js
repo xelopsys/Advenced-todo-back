@@ -51,17 +51,29 @@ const main = async (req, res) => {
 
     })
 
-    app.put('/todo/update', async (req, res) => {
-        const { id } = req.params;
+    // app.put('/todo/update', async (req, res) => {
+    //     const { id } = req.body;
+
+    //     try {
+    //         const user = await TodoList.findOneAndUpdate({ id }, { title, content }, { new: true });
+    //         res.json({ data: user });
+    //     } catch (err) {
+    //         console.log(err.message);
+    //         res.status(501).json({ error: err })
+    //     }
+    // })
+    app.patch('/todo/update', async (req, res) => {
+        const { id, title, content } = req.body;
 
         try {
-            const user = await TodoList.findOneAndUpdate({ id }, { title, content }, { new: true });
+            const user = await TodoList.findOneAndUpdate({ id: id }, { title: title, content: content }, { new: true });
             res.json({ data: user });
         } catch (err) {
             console.log(err.message);
             res.status(501).json({ error: err })
         }
     })
+
 
     app.delete('/todo/delete/', async (req, res) => {
         const { id } = req.body;
