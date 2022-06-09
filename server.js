@@ -12,7 +12,7 @@ const app = express()
 const port = process.env.PORT || 3002
 
 headers.set('Content-Type', 'application/json')
-headers.append('Access-Control-Allow-Origin', 'http://localhost:3002');
+headers.append('Access-Control-Allow-Origin', 'https://todo-app-xxhh8.ondigitalocean.app/');
 headers.append('Access-Control-Allow-Credentials', 'true');
 
 app.use(cors())
