@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const URI = `mongodb+srv://xelopsys:xelopsys@xelopsys.dfoka.mongodb.net/?retryWrites=true&w=majority`;
+const URI = `mongodb+srv://<username>:<password>@<dbname>.dfoka.mongodb.net/?retryWrites=true&w=majority`;
 
 const main = async (req, res) => {
     await mongoose.connect(
